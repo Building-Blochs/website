@@ -1,0 +1,119 @@
+---
+layout: default
+title: Teach
+nav: teach
+description: >-
+  Lesson outlines, a gate-by-gate level guide, audience framing and classroom
+  troubleshooting for teaching quantum computing with Building Bloch's.
+---
+
+<header class="page-head">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>02 / Teach with it</span>
+    <h1>One ball, a whole<br />lesson on qubits.</h1>
+    <p class="lede">The Orb is a vector picture you can hold. Anchor a class on "the arrow is the state, every gate is a rotation" and you can teach superposition, phase and non-commutativity without a single complex number.</p>
+  </div>
+</header>
+
+<!-- 45-MIN LESSON -->
+<section class="sec" style="padding-top:30px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Sample lesson &middot; 45 minutes</div>
+        <h2>A class, gate by gate</h2>
+      </div>
+      <span class="hand">adapt freely &rarr;</span>
+    </div>
+    <div class="flow">
+      <div class="flow-item"><span class="fn">1</span><div><h3>What's a qubit? <span class="mono" style="font-size:13px;color:var(--grey)">&middot; 0&ndash;5 min</span></h3><p>Arrow up is <code>|0&#10217;</code>, arrow down is <code>|1&#10217;</code> &mdash; just like a classical bit. Hand the ball around. Make it concrete before any maths.</p></div></div>
+      <div class="flow-item"><span class="fn">2</span><div><h3>Superposition &amp; phase &mdash; Level 1 <span class="mono" style="font-size:13px;color:var(--grey)">&middot; 5&ndash;15 min</span></h3><p>Press <b>H</b>: the arrow jumps to the equator &mdash; equal parts 0 and 1. Press it again and it returns. Introduce <b>Z</b> as a flip of phase.</p></div></div>
+      <div class="flow-item"><span class="fn">3</span><div><h3>Smaller rotations &mdash; Level 2 <span class="mono" style="font-size:13px;color:var(--grey)">&middot; 15&ndash;25 min</span></h3><p>Add <b>S</b> and <b>T</b>. Students see that gates come in different "amounts" of rotation, not just half-turns.</p></div></div>
+      <div class="flow-item"><span class="fn">4</span><div><h3>Order matters &mdash; Level 3 <span class="mono" style="font-size:13px;color:var(--grey)">&middot; 25&ndash;35 min</span></h3><p>Use the 90&deg; rotations X&#8329;&#8320;, Y&#8329;&#8320;, Z&#8329;&#8320;. Have a volunteer try <b>H then Z</b> and then <b>Z then H</b> &mdash; the arrow lands in different places. That's <b>non-commutativity</b>.</p></div></div>
+      <div class="flow-item"><span class="fn">5</span><div><h3>Free play &amp; recap &mdash; Level 4 <span class="mono" style="font-size:13px;color:var(--grey)">&middot; 35&ndash;45 min</span></h3><p>Level 4 revisits H and S as a longer puzzle. Let students race to flip the arrow, then recap: state = arrow, gate = rotation, measurement = the part the Orb can't show.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEVEL GUIDE -->
+<section class="sec" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">QX Orb level guide</div>
+        <h2>The four puzzle levels</h2>
+      </div>
+      <span class="hand">goal: flip the arrow down &darr;</span>
+    </div>
+    <div class="table-card">
+      <table class="bb">
+        <thead><tr><th style="width:14%">Level</th><th style="width:30%">Gates</th><th>What it teaches</th></tr></thead>
+        <tbody>
+          <tr><td><b>1</b></td><td class="mono">H, Z</td><td>Superposition and phase &mdash; the first taste of a gate.</td></tr>
+          <tr><td><b>2</b></td><td class="mono">H, S, T</td><td>Gates come in different sizes of rotation.</td></tr>
+          <tr><td><b>3</b></td><td class="mono">X&#8329;&#8320;, Y&#8329;&#8320;, Z&#8329;&#8320;</td><td>90&deg; rotations, usable once each &mdash; plan your moves; order matters.</td></tr>
+          <tr><td><b>4</b></td><td class="mono">H, S</td><td>A longer elaboration of Level 1.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sub" style="max-width:720px;margin-top:18px">On-screen gate buttons are colour-matched to the controller's <b>A&middot;B&middot;X&middot;Y</b> buttons &mdash; press the controller button that matches the colour on screen.</p>
+  </div>
+</section>
+
+<!-- AUDIENCE FRAMING -->
+<section class="sec" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Know your room</div>
+        <h2>Framing it for any age</h2>
+      </div>
+    </div>
+    <div class="cards-3">
+      <div class="card" style="box-shadow:var(--shadow-sm)">
+        <span class="tag" style="background:var(--green)">KIDS &middot; 8&ndash;12</span>
+        <h3 style="margin-top:14px">Skip the names</h3>
+        <p>Talk about "the arrow". Let them solve Level 1 by trial and error, and celebrate the confetti screen loudly.</p>
+      </div>
+      <div class="card" style="box-shadow:var(--shadow-sm)">
+        <span class="tag" style="background:var(--blue)">HIGH SCHOOL</span>
+        <h3 style="margin-top:14px">Anchor on the vector</h3>
+        <p>The Bloch sphere is just a 3D arrow; gates are rotations. No complex numbers needed for the picture.</p>
+      </div>
+      <div class="card" style="box-shadow:var(--shadow-sm)">
+        <span class="tag" style="background:var(--yellow);color:var(--ink)">ADULTS</span>
+        <h3 style="margin-top:14px">Lead with "what's different"</h3>
+        <p>Start from "what makes a qubit different from a bit" rather than the maths. The Orb is your answer.</p>
+      </div>
+      <div class="card" style="box-shadow:var(--shadow-sm)">
+        <span class="tag" style="background:var(--red)">PHYSICS / CS</span>
+        <h3 style="margin-top:14px">Go straight to unitaries</h3>
+        <p>Gates as unitary rotations; point at the axes on the buttons and discuss why H is a 180&deg; turn about the (x+z) axis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TROUBLESHOOTING -->
+<section class="sec" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Before the bell rings</div>
+        <h2>Classroom troubleshooting</h2>
+      </div>
+    </div>
+    <div class="prose" style="max-width:none">
+      <div class="soft-row">
+        <div class="note"><span class="ni">&#10227;</span><div><h4>90&deg; rotations feel wrong</h4><p>The Orb may be wired left-handed (chirality). Start the software with <code>--invert-y-axis</code> and test before class.</p></div></div>
+        <div class="note"><span class="ni">&#9211;</span><div><h4>Phantom gate presses</h4><p>On Xbox-style controllers, press the middle metal button until the <b>red ring is on</b> &mdash; otherwise the analog sticks mimic the buttons.</p></div></div>
+        <div class="note"><span class="ni">&#127760;</span><div><h4>Texts are in Dutch</h4><p>The built-in level texts default to Dutch. Switch to the <code>templates/en/</code> folder, or translate on the fly.</p></div></div>
+        <div class="note"><span class="ni">&#8635;</span><div><h4>A level keeps reloading</h4><p>Known bug. Open a second browser tab on the controller test page &mdash; it tends to settle things down.</p></div></div>
+      </div>
+    </div>
+    <div class="cta-row" style="margin-top:30px">
+      <a class="btn btn-primary" href="https://github.com/Tjeerdw/Building-Blochs" target="_blank" rel="noopener">Get the game software &#8599;</a>
+      <a class="btn btn-ghost" href="play.html">Outreach scripts &rarr;</a>
+    </div>
+  </div>
+</section>

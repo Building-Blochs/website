@@ -1,0 +1,12 @@
+title: Building Bloch's
+tagline: A qubit you can touch
+description: >-
+  Building Bloch's is an open-source, motorised Bloch-sphere demonstrator for
+  teaching and outreach in quantum computing. Build your own, teach with it,
+  or run a science-festival booth.
+author: QDNL and friends
+github_repo: https://github.com/Tjeerdw/Building-Blochs
+# Relative links + empty baseurl keep the site portable across any GitHub Pages URL.
+baseurl: ""
+url: ""
+markdown: kramdown

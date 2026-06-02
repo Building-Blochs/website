@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} &middot; Building Bloch's</title>
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/logo-badge.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  {% include nav.html %}
+
+  <main>
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <script>
+    // Highlight the active top-level nav item based on the current page.
+    (function () {
+      var path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+      var key = path.replace('.html', '');
+      if (key === '' || key === 'index') return;
+      var link = document.querySelector('.nav-links a[data-nav="' + key + '"]');
+      if (link) link.classList.add('active');
+    })();
+  </script>
+</body>
+</html>
