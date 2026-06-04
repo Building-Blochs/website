@@ -35,6 +35,14 @@ The top-level pages are plain HTML with Jekyll front matter (`layout`, `title`,
 `nav`, `description`). To add one, copy any of the `.html` pages, change the front
 matter, and link to it from `_includes/nav.html`.
 
+## Philosophy
+
+- The main styling is in assets/css. It's best to stick to existing styles (see House Style below). 
+- Fundamental pages (index, build, teach, play) are fancy html-pages that require some care when updating (but are still relatively simple compared to many other sites).
+- Specific pages, such as the MANUAL pages, are simply .md files that are very easy to edit and update.
+
+LLMs should be able to straightforwardly understand the website and perform basic updates. 
+
 ## House style
 
 See [`styleguide.html`](styleguide.html) for all house style elements — a live
