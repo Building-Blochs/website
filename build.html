@@ -3,151 +3,26 @@ layout: default
 title: Build
 nav: build
 description: >-
-  Everything you need to build your own Building Bloch's demonstrator — full
-  bill of materials, 3D-print files, electronics shopping links and firmware.
+  A full build guide for the Building Blochs demonstrator — bill of materials,
+  3D-print files, electronics and firmware — is coming soon.
 ---
 
 <header class="page-head">
   <div class="wrap">
     <span class="eyebrow"><span class="dot"></span>01 / Build your own</span>
-    <h1>Build a Bloch sphere<br />on your bench.</h1>
-    <p class="lede">Everything below comes straight from the open repository: a 3D-printed body, three omni wheels, an M5Stack controller and a stepper driver. Roughly <b>&euro;115</b> in parts and a free weekend with a soldering iron.</p>
-    <div class="cta-row" style="margin-top:26px">
-      <a class="btn btn-primary" href="https://github.com/Tjeerdw/Building-Blochs" target="_blank" rel="noopener">Open the repository &#8599;</a>
-      <a class="btn btn-ghost" href="#bom">Jump to parts list &darr;</a>
-    </div>
+    <h1>Build a Bloch Sphere yourself</h1>
   </div>
 </header>
 
-<section class="sec" style="padding-top:30px">
+<section class="sec" style="padding-top:24px">
   <div class="wrap">
-    <div class="cards-3">
-      <div class="panel">
-        <h3>At a glance</h3>
-        <div class="kv"><span class="k">Approx. cost</span><span class="v">~&euro;115</span></div>
-        <div class="kv"><span class="k">Build time</span><span class="v">a weekend</span></div>
-        <div class="kv"><span class="k">Sphere</span><span class="v">160&nbsp;mm</span></div>
-        <div class="kv"><span class="k">Controller</span><span class="v">M5Stack CoreS3</span></div>
-      </div>
-      <div class="panel">
-        <h3>Skills you'll need</h3>
-        <div class="kv"><span class="k">3D printing</span><span class="v">FDM, basic</span></div>
-        <div class="kv"><span class="k">Soldering</span><span class="v">connectors</span></div>
-        <div class="kv"><span class="k">Flashing firmware</span><span class="v">PlatformIO</span></div>
-        <div class="kv"><span class="k">Assembly</span><span class="v">bolts + glue</span></div>
-      </div>
-      <div class="panel">
-        <h3>Files &amp; software</h3>
-        <a class="lk red mono" href="https://github.com/Tjeerdw/Building-Blochs" target="_blank" rel="noopener" style="display:block;padding:6px 0">3D-print files (repo) &#8599;</a>
-        <a class="lk red mono" href="https://github.com/Tjeerdw/Building-Blochs/tree/master/Building-Blochs-Firmware" target="_blank" rel="noopener" style="display:block;padding:6px 0">Firmware source &#8599;</a>
-        <a class="lk red mono" href="https://github.com/Tjeerdw/Building-Blochs/blob/master/Doc/Building-Bloch.gif" target="_blank" rel="noopener" style="display:block;padding:6px 0">Assembly reference &#8599;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BILL OF MATERIALS -->
-<section class="sec" id="bom" style="padding-top:18px">
-  <div class="wrap">
-    <div class="sec-head">
+    <div class="note">
+      <span class="ni">&#9881;</span>
       <div>
-        <div class="sec-kicker">Bill of materials</div>
-        <h2>What to buy &amp; print</h2>
-      </div>
-      <span class="hand">prices are rough &middot; in &euro;</span>
-    </div>
-
-    <div class="table-card">
-      <table class="bb">
-        <thead>
-          <tr><th style="width:42%">Item</th><th>Qty</th><th>~&euro;</th><th>Source</th><th style="width:30%">Remarks</th></tr>
-        </thead>
-        <tbody>
-          <tr class="grp"><td colspan="5">3D-printed parts &mdash; files in the repository</td></tr>
-          <tr><td>Base</td><td class="qty">1</td><td class="price">1.00</td><td><a class="src" href="https://github.com/Tjeerdw/Building-Blochs" target="_blank" rel="noopener">3D print</a></td><td>print upside down</td></tr>
-          <tr><td>M5 housing</td><td class="qty">1</td><td class="price">0.60</td><td><a class="src" href="https://github.com/Tjeerdw/Building-Blochs" target="_blank" rel="noopener">3D print</a></td><td></td></tr>
-          <tr><td>Lid &mdash; blank</td><td class="qty">1</td><td class="price">0.20</td><td><a class="src" href="https://github.com/Tjeerdw/Building-Blochs" target="_blank" rel="noopener">3D print</a></td><td></td></tr>
-          <tr><td>M5 frame</td><td class="qty">1</td><td class="price">0.20</td><td><a class="src" href="https://github.com/Tjeerdw/Building-Blochs" target="_blank" rel="noopener">3D print</a></td><td></td></tr>
-          <tr><td>Axle adapter</td><td class="qty">3</td><td class="price">0.15</td><td><a class="src" href="https://github.com/Tjeerdw/Building-Blochs" target="_blank" rel="noopener">3D print</a></td><td>one per wheel</td></tr>
-          <tr><td>Arrow</td><td class="qty">1</td><td class="price">0.10</td><td><a class="src" href="https://github.com/Tjeerdw/Building-Blochs" target="_blank" rel="noopener">3D print</a></td><td>print slow, with a brim for stability</td></tr>
-
-          <tr class="grp"><td colspan="5">Electronics</td></tr>
-          <tr><td>M5Stack CoreS3 SE</td><td class="qty">1</td><td class="price">35.00</td><td><a class="src" href="https://shop.m5stack.com/products/m5stack-cores3-se-iot-controller-w-o-battery-bottom" target="_blank" rel="noopener">M5Stack &#8599;</a></td><td>touchscreen controller</td></tr>
-          <tr><td>Stepmotor Driver Module v1.1 (HR8825)</td><td class="qty">1</td><td class="price">20.00</td><td><a class="src" href="https://shop.m5stack.com/products/stepmotor-driver-module-v1-1-hr8825" target="_blank" rel="noopener">M5Stack &#8599;</a></td><td>some connector modifications required</td></tr>
-          <tr><td>58&nbsp;mm plastic omni wheel</td><td class="qty">3</td><td class="price">26.55</td><td><a class="src" href="https://eu.robotshop.com/products/58mm-plastic-omni-wheel-compatible-servos-lego-mindstorms-nxt" target="_blank" rel="noopener">RobotShop &#8599;</a></td><td>drives the sphere</td></tr>
-          <tr><td>Adafruit USB-PD breakout</td><td class="qty">1</td><td class="price">5.50</td><td><a class="src" href="https://www.adafruit.com/product/5807" target="_blank" rel="noopener">Adafruit &#8599;</a></td><td></td></tr>
-          <tr><td>USB-PD power supply</td><td class="qty">1</td><td class="price">&mdash;</td><td>any</td><td>must supply 9&nbsp;V</td></tr>
-
-          <tr class="grp"><td colspan="5">Hardware &amp; connectors</td></tr>
-          <tr><td>Plastic sphere</td><td class="qty">1</td><td class="price">&mdash;</td><td>any</td><td>~160&nbsp;mm diameter</td></tr>
-          <tr><td>Rubber feet</td><td class="qty">&mdash;</td><td class="price">&mdash;</td><td>any</td><td></td></tr>
-          <tr><td>Bolts / nuts</td><td class="qty">4 / 4</td><td class="price">&mdash;</td><td>any</td><td></td></tr>
-          <tr><td>Ty-rap (cable ties)</td><td class="qty">&mdash;</td><td class="price">&mdash;</td><td>any</td><td></td></tr>
-          <tr><td>4-pin connectors (M / F)</td><td class="qty">3 / 3</td><td class="price">&mdash;</td><td>any</td><td></td></tr>
-          <tr><td>3-pin connectors (M / F)</td><td class="qty">1 / 1</td><td class="price">&mdash;</td><td>any</td><td></td></tr>
-          <tr><td>Spring contacts</td><td class="qty">14</td><td class="price">&mdash;</td><td>any</td><td>get a few spares</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ASSEMBLY + FIRMWARE -->
-<section class="sec" style="padding-top:18px">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <div class="sec-kicker">From parts to Orb</div>
-        <h2>Print, wire, flash</h2>
+        <h4>Coming soon</h4>
+        <p>A full build guide &mdash; bill of materials, 3D-print files, electronics and firmware &mdash; is on its way. </p>
       </div>
     </div>
 
-    <div class="flow">
-      <div class="flow-item">
-        <span class="fn">1</span>
-        <div>
-          <h3>Print the body</h3>
-          <p>Print all seven parts from the repo. The base goes upside down; print the arrow slowly with a brim so it stays put. PLA is fine.</p>
-        </div>
-      </div>
-      <div class="flow-item">
-        <span class="fn">2</span>
-        <div>
-          <h3>Wire the electronics</h3>
-          <p>Three omni wheels on stepper motors drive the 160&nbsp;mm sphere, fed by the HR8825 driver module and powered at 9&nbsp;V through the USB-PD breakout. The stepper module needs a few connector modifications &mdash; see the repo notes.</p>
-        </div>
-      </div>
-      <div class="flow-item">
-        <span class="fn">3</span>
-        <div>
-          <h3>Flash the firmware</h3>
-          <p>Open the firmware in <a class="inline" href="https://platformio.org/" target="_blank" rel="noopener">PlatformIO</a>, select the <code>m5stack-cores3</code> environment and upload. It's an Arduino / ESP32 project using LVGL for the touchscreen.</p>
-        </div>
-      </div>
-      <div class="flow-item">
-        <span class="fn">4</span>
-        <div>
-          <h3>Drop in the sphere &amp; go</h3>
-          <p>Seat the sphere on the three wheels, add the arrow, and power up. The touchscreen runs standalone; connect a PC for the games.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="soft-row" style="margin-top:28px">
-      <div class="note">
-        <span class="ni">!</span>
-        <div>
-          <h4>Mind the chirality</h4>
-          <p>Some Orbs end up wired left-handed. If 90&deg; rotations feel "wrong", start the game software with <code>--invert-y-axis</code>.</p>
-        </div>
-      </div>
-      <div class="note warn">
-        <span class="ni">&#9888;</span>
-        <div>
-          <h4>Connector modifications</h4>
-          <p>The HR8825 stepper-driver module needs minor connector rework before it fits this build. Check the repository before you solder.</p>
-        </div>
-      </div>
-    </div>
   </div>
 </section>

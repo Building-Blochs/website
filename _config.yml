@@ -1,12 +1,23 @@
-title: Building Bloch's
+title: Building Blochs
 tagline: A qubit you can touch
 description: >-
-  Building Bloch's is an open-source, motorised Bloch-sphere demonstrator for
+  Building Blochs is an open-source, motorised Bloch-sphere demonstrator for
   teaching and outreach in quantum computing. Build your own, teach with it,
   or run a science-festival booth.
-author: QDNL and friends
+author: Quantum Delta NL & the UvA Technology Centre
+# Repo / hosting
+repository: Tjeerdw/Building-Blochs
 github_repo: https://github.com/Tjeerdw/Building-Blochs
-# Relative links + empty baseurl keep the site portable across any GitHub Pages URL.
+# Relative links + no baseurl keep the site portable across any GitHub Pages URL.
 baseurl: ""
 url: ""
+# Jekyll build
 markdown: kramdown
+# Leave $…$ / $$…$$ untouched so MathJax (loaded in the manual layout) renders it.
+kramdown:
+  math_engine: null
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/

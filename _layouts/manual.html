@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+{% comment %}
+  Layout for the Markdown manuals (MANUAL-*.md). The .md files stay the
+  editable source of truth; this wrapper gives Kramdown's output the Field
+  Notebook look and pulls the meta block + cross-links from front matter.
+  Math is typeset by MathJax (see the bottom of this file).
+{% endcomment %}
+
+<header class="page-head">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>{{ page.eyebrow | default: "Manual" }}</span>
+    <h1>{{ page.heading | default: page.title }}</h1>
+    {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+  </div>
+</header>
+
+<section class="sec" style="padding-top:24px">
+  <div class="wrap">
+    {% if page.meta %}
+    <div class="meta-stats">
+      {% for row in page.meta %}{% unless row.items %}
+      <div class="meta-stat"><span class="v">{{ row.v }}</span><span class="k">{{ row.k }}</span></div>
+      {% endunless %}{% endfor %}
+    </div>
+    {% for row in page.meta %}{% if row.items %}
+    <div class="panel manual-need">
+      <span class="nk">{{ row.k }}</span>
+      <ul class="checklist">
+        {% for item in row.items %}<li><span class="box"></span><span>{{ item }}</span></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}{% endfor %}
+    {% endif %}
+
+    <article class="manual prose">
+      {{ content }}
+    </article>
+
+    {% if page.related %}
+    <div class="cta-row manual-related">
+      {% for r in page.related %}
+      <a class="btn btn-ghost" href="{{ r.url }}">{{ r.label }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- MathJax — typeset $…$ and $$…$$ formulas. Loaded only on manual pages. -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>

@@ -1,0 +1,159 @@
+---
+layout: default
+title: Play
+nav: play
+description: >-
+  Games, demo scripts and a science-festival pitch for doing quantum outreach
+  with Building Bloch's — plus a what-to-bring checklist and version archive.
+---
+
+<header class="page-head">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>03 / Play &amp; outreach</span>
+    <h1>Hand someone a qubit<br />and watch it click.</h1>
+    <p class="lede">The Orb does the visualising; <b>you</b> drive the conversation. The moment a passer-by presses a button themselves, you've got them. Pick a game, grab a script, and go.</p>
+  </div>
+</header>
+
+<!-- GAMES -->
+<section class="sec" id="games" style="padding-top:30px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Available games</div>
+        <h2>What to run on the Orb</h2>
+      </div>
+      <span class="hand">full docs live with each game &rarr;</span>
+    </div>
+    <div class="cards-3">
+      <a class="card link" href="https://github.com/Tjeerdw/Building-Blochs" target="_blank" rel="noopener">
+        <span class="badge" style="background:var(--red);width:54px;height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-mono);font-weight:700;margin-bottom:16px">QX</span>
+        <h3>QX Orb</h3>
+        <p>Four short puzzle levels that introduce quantum gates one at a time. Connect a PC and play in the browser.</p>
+        <span class="go red">github.com/Tjeerdw/Building-Blochs &#8599;</span>
+      </a>
+      <a class="card link" href="https://blochfish.netlify.app/" target="_blank" rel="noopener">
+        <span class="badge" style="background:var(--blue);width:54px;height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;margin-bottom:16px">&#9685;</span>
+        <h3>Fish Game</h3>
+        <p>A puzzle game developed by qTLC Leiden. Runs straight in the browser &mdash; nothing to install.</p>
+        <span class="go" style="color:var(--blue)">blochfish.netlify.app &#8599;</span>
+      </a>
+      <div class="card">
+        <span class="badge" style="background:var(--ink);width:54px;height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;margin-bottom:16px">&#9632;</span>
+        <h3>Standalone mode</h3>
+        <p>No laptop? Use the built-in touchscreen and buttons as a pure visual aid while you explain qubits by hand.</p>
+        <span class="go" style="color:var(--grey)">on-device &middot; no setup</span>
+      </div>
+    </div>
+    <div class="note" style="margin-top:22px">
+      <span class="ni">&gt;_</span>
+      <div>
+        <h4>Running QX Orb</h4>
+        <p>With Python installed: <code>python app.py</code> (hardware connected), <code>python app.py test</code> (no hardware), or <code>python app.py --invert-y-axis</code> (left-handed Orbs). Then open the URL Flask prints &mdash; usually <code>http://127.0.0.1:5000</code>. Full setup notes live in the repo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPTS -->
+<section class="sec" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Pick your script length</div>
+        <h2>From thirty seconds to a class</h2>
+      </div>
+    </div>
+    <div class="scripts">
+      <div class="script">
+        <div class="sh"><h3>The festival pitch</h3><span class="dur">30 seconds</span></div>
+        <div class="sb">
+          <blockquote>"This ball shows the state of a single qubit. A normal bit is 0 or 1 &mdash; arrow up or arrow down. A qubit can also point anywhere in between. Watch what happens when I press this button."</blockquote>
+          <p class="sub" style="font-size:16px;margin-top:16px">Press <b>H</b>. The arrow moves to the equator. "That's a superposition." Then offer the controller &mdash; the moment they press it themselves, you have them.</p>
+        </div>
+      </div>
+      <div class="script">
+        <div class="sh"><h3>The booth demo</h3><span class="dur">2 minutes</span></div>
+        <div class="sb">
+          <ol>
+            <li>Start from arrow-up = <code>|0&#10217;</code>. Press <b>X</b> &mdash; the arrow flips to <code>|1&#10217;</code>. "That's a classical NOT."</li>
+            <li>Reset. Press <b>H</b> &mdash; the arrow goes to the equator. "Superposition: equal parts 0 and 1."</li>
+            <li>Press <b>H</b> again &mdash; it returns to <code>|0&#10217;</code>. "Gates are reversible. That's part of what makes quantum different."</li>
+            <li>Hand over the controller and start Level 1.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="script">
+        <div class="sh"><h3>The classroom session</h3><span class="dur">5&ndash;15 minutes</span></div>
+        <div class="sb">
+          <p class="sub" style="font-size:16px">Run Levels 1&ndash;4 in order, pausing between each to explain the new gate. Levels 3 and 4 are the moment to show <b>non-commutativity</b>: have a volunteer try H&nbsp;then&nbsp;Z and Z&nbsp;then&nbsp;H, and watch the arrow land in different places. See the <a class="inline" href="teach.html">teaching guide</a> for a full lesson plan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ + CHECKLIST -->
+<section class="sec" style="padding-top:18px">
+  <div class="wrap">
+    <div class="cards-3" style="grid-template-columns:1.5fr 1fr;align-items:start;gap:30px">
+      <div>
+        <div class="sec-kicker">Questions you'll get</div>
+        <h2 style="font-size:30px;margin-bottom:18px">Quick answers</h2>
+        <div class="prose" style="max-width:none">
+          <h3>"Is this a real quantum computer?"</h3>
+          <p>No &mdash; it's a <b>visualiser</b>. It shows what one qubit's state would do under these gates. A real qubit you can't look at without collapsing it.</p>
+          <h3>"What about measurement?"</h3>
+          <p>That's the part the Orb doesn't show. Mime it: "if I measured now, with the arrow here, I'd get 0 with probability&hellip;"</p>
+          <h3>"Why only one qubit?"</h3>
+          <p>Two qubits already need a four-dimensional space &mdash; there's no nice ball for that. The Orb is deliberately the simplest case.</p>
+          <h3>"Can it entangle?"</h3>
+          <p>No &mdash; one qubit can't entangle with itself.</p>
+        </div>
+      </div>
+      <div class="panel">
+        <h3 style="margin-bottom:8px">What to bring</h3>
+        <ul class="checklist">
+          <li><span class="box"></span><span>The Orb and its stand</span></li>
+          <li><span class="box"></span><span>The controller (plus a spare)</span></li>
+          <li><span class="box"></span><span>A laptop with <code>app.py</code> tested that morning</span></li>
+          <li><span class="box"></span><span>A long-enough USB-C cable</span></li>
+          <li><span class="box"></span><span>One printed Bloch sphere with axes labelled</span></li>
+          <li><span class="box"></span><span>Checked battery &amp; cable &mdash; a dead Orb is a sad Orb</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERSIONS / ARCHIVE -->
+<section class="sec" id="versions" style="padding-top:18px">
+  <div class="wrap">
+    <div class="strip">
+      <div class="sec-head" style="margin-bottom:24px">
+        <h2>Versions &amp; archive</h2>
+        <span class="mono" style="color:#9a9aa2;font-size:13px">firmware VERSIONSTR</span>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="sn" style="font-size:30px">v20241018</div>
+          <h3>Current firmware</h3>
+          <p>M5Stack CoreS3 build, LVGL touchscreen UI. Source and release notes live in the repository.</p>
+        </div>
+        <div class="step">
+          <div class="sn" style="font-size:30px">Variants</div>
+          <h3>Known hardware units</h3>
+          <p>Some units (e.g. the CWI Orb) are wired left-handed &mdash; run games with <code style="color:#fff;background:rgba(255,255,255,.12)">--invert-y-axis</code>.</p>
+        </div>
+        <div class="step">
+          <div class="sn" style="font-size:30px">Older</div>
+          <h3>Earlier revisions</h3>
+          <p>Past hardware and firmware revisions are tracked in the Git history &mdash; browse tags and commits on GitHub.</p>
+        </div>
+      </div>
+      <div class="cta-row" style="margin-top:28px">
+        <a class="btn btn-ghost" href="https://github.com/Tjeerdw/Building-Blochs" target="_blank" rel="noopener" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.4);box-shadow:none">Browse releases on GitHub &#8599;</a>
+      </div>
+    </div>
+  </div>
+</section>

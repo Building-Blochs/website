@@ -1,63 +1,83 @@
-# Building Bloch's — website
+# Building Blochs — website
 
-The public website for the Building Bloch's project. A small Jekyll site
-(static HTML + one stylesheet) designed to run on GitHub Pages with **no build
-configuration**.
+The public website for the **Building Blochs** project: an open-source, motorised
+Bloch-sphere demonstrator for teaching and outreach in quantum computing.
+
+It's a small [Jekyll](https://jekyllrb.com/) site — static HTML + one stylesheet
+for the main pages, plus a handful of Markdown manuals — that builds on GitHub
+Pages with **no configuration**. The only runtime dependencies are Google Fonts
+and (on the manual pages only) MathJax, both loaded from a CDN.
 
 ## Structure
 
 ```
-_config.yml          Site settings
-index.html           Home
-build.html           Build your own (bill of materials, files, firmware)
-teach.html           Teach with it (lessons, level guide, troubleshooting)
-play.html            Games & outreach (games, scripts, versions)
-_layouts/default.html   Page shell: <head>, nav, footer
-_includes/nav.html      Top navigation (edit once, applies to every page)
-_includes/footer.html   Footer (edit once, applies to every page)
-assets/css/style.css    All styling
-assets/logo-badge.png   Logo
+.
+├── _config.yml          # site title, description, Markdown + math build settings
+├── _layouts/
+│   ├── default.html      # shared <head>, nav + footer wrapper
+│   └── manual.html       # wrapper for the Markdown manuals (meta cards + MathJax)
+├── _includes/
+│   ├── nav.html          # top navigation
+│   └── footer.html       # site footer
+├── index.html            # Home
+├── build.html            # Build your own (placeholder — "coming soon")
+├── teach.html            # Teach with it — lesson plans
+├── play.html             # Games & laptop troubleshooting
+├── styleguide.html       # internal design-system catalogue (not linked from the site)
+├── MANUAL-*.md           # lesson plans & game manuals (Markdown, layout: manual)
+└── assets/
+    ├── css/style.css     # the entire design system
+    ├── building-bloch.gif
+    └── logo-*.png
 ```
 
-Every page uses **relative links**, so the site works at any URL —
-`username.github.io/repo/` or a custom domain — with no `baseurl` changes.
+The top-level pages are plain HTML with Jekyll front matter (`layout`, `title`,
+`nav`, `description`). To add one, copy any of the `.html` pages, change the front
+matter, and link to it from `_includes/nav.html`.
 
-## Host it on GitHub Pages
+## House style
 
-### Option A — in this repo, from a `/docs` folder (recommended)
+See [`styleguide.html`](styleguide.html) for all house style elements — a live
+catalogue of every reusable component, rendered with the markup to copy. This page can in principle be found by anyone on the internet, but that won't normally happen for regular site visitors because no other page links to it. 
 
-1. Copy everything in this folder into a `docs/` folder at the root of your
-   repository and push it.
-2. On GitHub: **Settings → Pages**.
-3. Under **Build and deployment → Source**, choose **Deploy from a branch**.
-4. Branch: `main` (or `master`), folder: **/docs**. Save.
-5. Wait ~1 minute. Your site appears at
-   `https://<username>.github.io/<repo>/`.
+## Manuals
 
-Keeping the site in `/docs` means it lives happily alongside the firmware and
-CAD folders without Jekyll trying to publish those.
+Lesson plans and game manuals live in `MANUAL-*.md` as plain **Markdown**, so they
+stay easy to edit. Each carries `layout: manual` front matter, which renders it
+through `_layouts/manual.html`: a page header, a row of "basic info" stat cards and
+a "you need" checklist (both from a `meta:` list in the front matter), the rendered
+body styled to match the design system, and `related:` cross-link buttons.
 
-### Option B — a dedicated repository, from the root
+A few conventions:
 
-1. Create a new repo and put these files at its **root**.
-2. **Settings → Pages → Source: Deploy from a branch → main → / (root)**.
-3. Save and wait ~1 minute.
+- `permalink:` gives each manual a clean URL (e.g. `/manual-qx-orb.html`).
+- In a `meta:` row, use `v:` for a stat card or `items:` for a checklist.
+- Maths is written in LaTeX and typeset by **MathJax**. Use single `$…$` for inline
+  and `$$…$$` for display, and write kets as `\lvert 0\rangle` — a literal `|`
+  makes Kramdown try to parse a table. (`_config.yml` sets `math_engine: null` so
+  Kramdown leaves the maths for MathJax.)
+- Raw HTML blocks (e.g. a `.note` callout) work inside the Markdown as long as
+  there's a blank line before and after.
 
-> Tip: a repo named `<username>.github.io` is served at the domain root
-> (`https://<username>.github.io/`) instead of a sub-path.
-
-## Editing
-
-- Change text/structure in the `.html` pages.
-- Change the menu or footer once in `_includes/` and it updates everywhere.
-- Change colours, type and spacing in `assets/css/style.css` (design tokens
-  live at the top under `:root`).
-
-## Run it locally (optional)
+## Run it locally
 
 ```bash
-gem install bundler jekyll
-jekyll serve     # then open http://localhost:4000
+bundle install
+bundle exec jekyll serve
+# → http://127.0.0.1:4000
 ```
 
-You don't need this to publish — GitHub Pages builds it for you on every push.
+(Requires Ruby + Bundler. The `Gemfile` pins the `github-pages` gem so your local
+build matches GitHub's.)
+
+## Publish on GitHub Pages
+
+Upon upload, Github will automatically update the website. For more information, search for 'GitHub Pages'.
+
+## Theming
+
+The look is driven entirely by CSS custom properties in `assets/css/style.css`.
+The `<body>` carries `data-vibe` (`playful` / `editorial` / `bold`) and
+`data-surface` (`warm` / `bright` / `slate`) attributes — set in
+`_layouts/default.html` — which swap the radii, borders, shadows and paper tone.
+Change those two attributes to re-skin the whole site.

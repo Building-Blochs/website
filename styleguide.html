@@ -1,0 +1,706 @@
+---
+layout: default
+title: Style guide
+description: >-
+  Internal reference page showcasing every reusable style element in the
+  Building Bloch's design system — colours, type, buttons, cards, hero,
+  tables and more. Not linked from the site; intended for maintainers.
+sitemap: false
+---
+
+{% comment %}
+  ============================================================================
+  HIDDEN STYLE GUIDE  ·  /styleguide.html
+  ----------------------------------------------------------------------------
+  This page is deliberately NOT linked from nav.html or footer.html. It exists
+  so maintainers can see every reusable component (the "Field Notebook" design
+  system in assets/css/style.css) rendered in one place, with the exact markup
+  to copy. When you add or change a component in style.css, add/update its
+  example here so the catalogue stays honest.
+
+  The nav (top) and footer (bottom) of THIS page are the live chrome, since the
+  page uses the default layout — see the "Nav & footer" section for their markup.
+  ============================================================================
+{% endcomment %}
+
+<header class="page-head">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>Internal &middot; not linked from the site</span>
+    <h1>The style guide</h1>
+    <p class="lede">Every reusable building block in the <b>Field Notebook</b> design system, rendered live with the markup to copy. Everything here is driven by <code>assets/css/style.css</code>. Edit content freely on the other pages &mdash; if a style lives here, it won't get lost.</p>
+  </div>
+</header>
+
+<!-- ========================================================================
+     COLOUR & TOKENS
+     ===================================================================== -->
+<section class="sec" id="colours" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Design tokens</div>
+        <h2>Colour palette</h2>
+      </div>
+      <span class="hand">CSS custom properties in <code>:root</code></span>
+    </div>
+
+    <div class="cards-3" style="grid-template-columns:repeat(4,1fr);gap:16px">
+      <div class="panel" style="padding:0;overflow:hidden">
+        <div style="height:90px;background:var(--ink)"></div>
+        <div style="padding:14px 16px"><b>Ink</b><div class="mono" style="font-size:12px;color:var(--grey)">--ink &middot; #1b1b20</div></div>
+      </div>
+      <div class="panel" style="padding:0;overflow:hidden">
+        <div style="height:90px;background:var(--ink-soft)"></div>
+        <div style="padding:14px 16px"><b>Ink soft</b><div class="mono" style="font-size:12px;color:var(--grey)">--ink-soft &middot; #3a3a42</div></div>
+      </div>
+      <div class="panel" style="padding:0;overflow:hidden">
+        <div style="height:90px;background:var(--grey)"></div>
+        <div style="padding:14px 16px"><b>Grey</b><div class="mono" style="font-size:12px;color:var(--grey)">--grey &middot; #6f6f74</div></div>
+      </div>
+      <div class="panel" style="padding:0;overflow:hidden">
+        <div style="height:90px;background:var(--line)"></div>
+        <div style="padding:14px 16px"><b>Line</b><div class="mono" style="font-size:12px;color:var(--grey)">--line &middot; #e3dccb</div></div>
+      </div>
+
+      <div class="panel" style="padding:0;overflow:hidden">
+        <div style="height:90px;background:var(--paper)"></div>
+        <div style="padding:14px 16px"><b>Paper</b><div class="mono" style="font-size:12px;color:var(--grey)">--paper &middot; #f4efe2</div></div>
+      </div>
+      <div class="panel" style="padding:0;overflow:hidden">
+        <div style="height:90px;background:var(--card)"></div>
+        <div style="padding:14px 16px"><b>Card</b><div class="mono" style="font-size:12px;color:var(--grey)">--card &middot; #fbf8f1</div></div>
+      </div>
+      <div class="panel" style="padding:0;overflow:hidden">
+        <div style="height:90px;background:var(--red)"></div>
+        <div style="padding:14px 16px"><b>Red</b> <span class="hand" style="font-size:14px">accent</span><div class="mono" style="font-size:12px;color:var(--grey)">--red &middot; #e0271b</div></div>
+      </div>
+      <div class="panel" style="padding:0;overflow:hidden">
+        <div style="height:90px;background:var(--red-deep)"></div>
+        <div style="padding:14px 16px"><b>Red deep</b><div class="mono" style="font-size:12px;color:var(--grey)">--red-deep &middot; #b81d14</div></div>
+      </div>
+
+      <div class="panel" style="padding:0;overflow:hidden">
+        <div style="height:90px;background:var(--blue)"></div>
+        <div style="padding:14px 16px"><b>Blue</b><div class="mono" style="font-size:12px;color:var(--grey)">--blue &middot; #3a8fb7</div></div>
+      </div>
+      <div class="panel" style="padding:0;overflow:hidden">
+        <div style="height:90px;background:var(--green)"></div>
+        <div style="padding:14px 16px"><b>Green</b><div class="mono" style="font-size:12px;color:var(--grey)">--green &middot; #4ea863</div></div>
+      </div>
+      <div class="panel" style="padding:0;overflow:hidden">
+        <div style="height:90px;background:var(--yellow)"></div>
+        <div style="padding:14px 16px"><b>Yellow</b><div class="mono" style="font-size:12px;color:var(--grey)">--yellow &middot; #dca233</div></div>
+      </div>
+      <div class="panel" style="padding:16px">
+        <b>Other tokens</b>
+        <div class="kv"><span class="k">Radius</span><span class="v">10 / 16 / 22px</span></div>
+        <div class="kv"><span class="k">Shadow</span><span class="v">4px 4px 0 ink</span></div>
+        <div class="kv"><span class="k">Max width</span><span class="v">1180px</span></div>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top:22px">
+      <span class="ni" style="background:var(--blue)">i</span>
+      <div>
+        <h4>Theme switches on <code>&lt;body&gt;</code></h4>
+        <p>Radius, shadow language, border weight and the hand-drawn notes are all token-driven. Set <code>data-vibe="playful|editorial|bold"</code> and <code>data-surface="warm|bright|slate"</code> on <code>&lt;body&gt;</code> to reshape the whole site. This page renders the default <code>playful</code> / <code>warm</code> combination.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     TYPOGRAPHY
+     ===================================================================== -->
+<section class="sec" id="type" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Typography</div>
+        <h2>Type &amp; text styles</h2>
+      </div>
+      <span class="hand">four font families</span>
+    </div>
+
+    <div class="cards-3" style="grid-template-columns:1.2fr 1fr;align-items:start;gap:30px">
+      <div class="panel">
+        <h3 style="margin-bottom:14px">Font families</h3>
+        <p style="font-family:var(--font-disp);font-size:30px;font-weight:600">Fredoka &mdash; display</p>
+        <div class="mono" style="font-size:12px;color:var(--grey);margin-bottom:14px">--font-disp &middot; headings, buttons, numbers</div>
+        <p style="font-family:var(--font-body);font-size:20px">Hanken Grotesk &mdash; body text</p>
+        <div class="mono" style="font-size:12px;color:var(--grey);margin-bottom:14px">--font-body &middot; paragraphs &amp; UI</div>
+        <p class="mono" style="font-size:18px">Space Mono &mdash; mono</p>
+        <div class="mono" style="font-size:12px;color:var(--grey);margin-bottom:14px">--font-mono &middot; labels, codes, prices</div>
+        <p class="hand" style="font-size:24px;color:var(--ink)">Patrick Hand &mdash; annotations</p>
+        <div class="mono" style="font-size:12px;color:var(--grey)">--font-hand &middot; hand-drawn notes</div>
+      </div>
+
+      <div class="panel">
+        <h3 style="margin-bottom:14px">Headings</h3>
+        <h1 style="font-size:44px">Heading 1</h1>
+        <h2 style="font-size:34px;margin-top:10px">Heading 2</h2>
+        <h3 style="font-size:24px;margin-top:10px">Heading 3</h3>
+        <h4 style="font-size:18px;margin-top:10px;font-family:var(--font-disp);font-weight:600">Heading 4</h4>
+      </div>
+    </div>
+
+    <div class="prose" style="margin-top:26px">
+      <h3>Inline text helpers</h3>
+      <p>
+        Body copy uses the <code>.prose</code> wrapper. Inside it you can
+        <a class="inline" href="#type">link inline</a> with a red underline,
+        emphasise a phrase with <span class="mark red">a highlighter mark</span>,
+        drop in <code>inline code</code>, call out a word in <span class="red">red</span>,
+        a <span class="mono">mono span</span>, or a
+        <span class="hand" style="font-size:18px">hand-drawn aside</span>.
+      </p>
+      <ul class="bullets">
+        <li>Bulleted list item with the little red square marker.</li>
+        <li>Second item &mdash; lives inside <code>ul.bullets</code>.</li>
+        <li>Third item to show the rhythm.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     BUTTONS, CHIPS & TAGS
+     ===================================================================== -->
+<section class="sec" id="buttons" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Actions &amp; labels</div>
+        <h2>Buttons, chips &amp; tags</h2>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3 style="margin-bottom:6px">Buttons</h3>
+      <p class="hand" style="margin-bottom:16px">hover lifts them, active presses them down</p>
+      <div class="cta-row" style="margin-top:0;display:flex;flex-wrap:wrap;gap:14px">
+        <a class="btn btn-primary" href="#buttons">Primary &rarr;</a>
+        <a class="btn btn-ghost" href="#buttons">Ghost button</a>
+        <button class="btn btn-primary">As a &lt;button&gt;</button>
+      </div>
+      <p class="mono" style="font-size:12px;color:var(--grey);margin-top:16px">.btn.btn-primary &middot; .btn.btn-ghost &middot; wrap several in a <code>.cta-row</code></p>
+
+      <h3 style="margin:26px 0 14px">Eyebrow &amp; tags</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+        <span class="eyebrow"><span class="dot"></span>Eyebrow chip</span>
+        <span class="tag" style="background:var(--red)">tag red</span>
+        <span class="tag" style="background:var(--blue)">tag blue</span>
+        <span class="tag" style="background:var(--green)">tag green</span>
+        <span class="tag" style="background:var(--yellow);color:var(--ink)">tag yellow</span>
+        <span class="tag" style="background:var(--ink)">tag ink</span>
+      </div>
+      <p class="mono" style="font-size:12px;color:var(--grey);margin-top:16px">.eyebrow &middot; .tag (set background inline; use ink text on yellow)</p>
+
+      <h3 style="margin:26px 0 14px">Square badges</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+        <span class="badge" style="background:var(--red);width:54px;height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-mono);font-weight:700">QX</span>
+        <span class="badge" style="background:var(--blue);width:54px;height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px">&#9685;</span>
+        <span class="badge" style="background:var(--green);width:54px;height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:30px;line-height:1">+</span>
+        <span class="badge" style="background:var(--ink);width:54px;height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px">&#9632;</span>
+      </div>
+      <p class="mono" style="font-size:12px;color:var(--grey);margin-top:16px">.badge (sized inline) &middot; used in game cards &amp; soft-rows</p>
+
+      <h3 style="margin:26px 0 14px">"Go" links</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center">
+        <span class="go red">Internal link &rarr;</span>
+        <span class="go" style="color:var(--blue)">Blue variant &rarr;</span>
+        <span class="go" style="color:var(--green)">External &#8599;</span>
+      </div>
+      <p class="mono" style="font-size:12px;color:var(--grey);margin-top:16px">.go (recolour inline) &middot; the call-to-action line at the foot of a card</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     SECTION HEADERS
+     ===================================================================== -->
+<section class="sec" id="headers" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Section kicker</div>
+        <h2>Section headers</h2>
+      </div>
+      <span class="hand">kicker + heading, optional hand note &rarr;</span>
+    </div>
+    <p class="prose" style="color:var(--ink-soft)">A <code>.sec-head</code> pairs a <code>.sec-kicker</code> (small red mono label) with an <code>h2</code>, and optionally a hand-drawn note pushed to the right. The header above this paragraph is itself the live example.</p>
+  </div>
+</section>
+
+<!-- ========================================================================
+     HERO
+     ===================================================================== -->
+<section class="sec" id="hero" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Landing</div>
+        <h2>Hero</h2>
+      </div>
+      <span class="hand">the home-page opener &mdash; two-column on desktop, stacks on mobile</span>
+    </div>
+  </div>
+
+  <!-- the .hero normally sits directly after the nav as a top-level <header> -->
+  <header class="hero" style="padding-top:20px">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>Open-source quantum demonstrator</span>
+        <h1>A headline with <span class="mark red">a highlighted phrase.</span></h1>
+        <p class="sub">The hero pairs an eyebrow, a big display headline (use a <code>.mark.red</code> highlight on the key phrase), a <code>.sub</code> lead paragraph and a <code>.cta-row</code> of buttons.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#hero">Primary action &rarr;</a>
+          <a class="btn btn-ghost" href="#hero">Secondary</a>
+        </div>
+        <div class="byline">
+          <span>&#9998;</span> an optional hand-written <code>.byline</code> under the buttons
+        </div>
+      </div>
+      <div class="hero-art">
+        <img class="hero-gif" src="assets/building-bloch.gif" alt="The Building Blochs demonstrator in action" />
+        <span class="callout c1">a hand-drawn<br />callout &rarr;</span>
+        <span class="callout c2">&larr; another<br />annotation</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <p class="mono" style="font-size:12px;color:var(--grey);margin-top:8px">header.hero &gt; .wrap &gt; (copy column) + .hero-art &middot; .hero-art img.hero-gif gets a soft drop shadow &middot; .callout.c1/.c2 are absolutely-positioned hand notes (hidden on mobile)</p>
+  </div>
+</section>
+
+<!-- ========================================================================
+     CARDS
+     ===================================================================== -->
+<section class="sec" id="cards" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Containers</div>
+        <h2>Cards</h2>
+      </div>
+      <span class="hand">.card &mdash; add .link to make it lift on hover</span>
+    </div>
+
+    <div class="cards-3">
+      <a class="card link" href="#cards">
+        <span class="num">01</span>
+        <span class="card-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1b1b20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6a4 4 0 0 0 5 5l-9 9a2.8 2.8 0 0 1-4-4l9-9a4 4 0 0 0-1-1z"/></svg>
+        </span>
+        <h3>Link card</h3>
+        <p>Icon, number badge and a "go" link. Hover to see it lift. Used for the audience paths.</p>
+        <span class="go red">Go somewhere &rarr;</span>
+      </a>
+      <div class="card">
+        <span class="num">02</span>
+        <span class="card-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1b1b20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="1"/><path d="M3 17l-1 4M21 17l1 4M9 21h6"/></svg>
+        </span>
+        <h3>Static card</h3>
+        <p>Same look without the hover lift &mdash; just a plain <code>.card</code>.</p>
+        <span class="go" style="color:var(--blue)">Inert label</span>
+      </div>
+      <div class="card" style="box-shadow:var(--shadow-sm)">
+        <div class="sn" style="font-family:var(--font-disp);font-weight:700;font-size:40px;color:var(--red);line-height:1">~&euro;115</div>
+        <p style="flex:none;margin-top:8px"><b>stat card</b> &mdash; a big number plus a line of copy.</p>
+      </div>
+    </div>
+
+    <h3 style="margin:30px 0 14px;font-size:20px">Card variants</h3>
+    <div class="cards-3">
+      <a class="card link" href="#cards">
+        <span class="badge" style="background:var(--red);width:54px;height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-mono);font-weight:700;margin-bottom:16px">QX</span>
+        <h3>Badge card</h3>
+        <p>A coloured <code>.badge</code> stands in for the icon &mdash; used in the games grid.</p>
+        <span class="go red">github.com/&hellip; &#8599;</span>
+      </a>
+      <div class="card" style="box-shadow:var(--shadow-sm)">
+        <span class="tag" style="background:var(--green)">KIDS &middot; 8&ndash;12</span>
+        <h3 style="margin-top:14px">Tag card</h3>
+        <p>Leads with a <code>.tag</code> chip instead of a number &mdash; used for audience framing.</p>
+      </div>
+      <div class="card" style="box-shadow:var(--shadow-sm)">
+        <span class="tag" style="background:var(--yellow);color:var(--ink)">ADULTS</span>
+        <h3 style="margin-top:14px">Tag card (yellow)</h3>
+        <p>Yellow tags take ink-coloured text so they stay legible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     ADVANTAGES / CHECKMARK GRID
+     ===================================================================== -->
+<section class="sec" id="advantages" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Selling points</div>
+        <h2>Advantages grid</h2>
+      </div>
+      <span class="hand">three-up checkmark list</span>
+    </div>
+    <ul class="adv">
+      <li class="adv-item">
+        <span class="adv-ck"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <div>
+          <h4>A red checkmark item</h4>
+          <p>A coloured tick chip, a short heading and a line of copy. <code>.adv-ck</code> is red by default.</p>
+        </div>
+      </li>
+      <li class="adv-item">
+        <span class="adv-ck b"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <div>
+          <h4>Blue variant</h4>
+          <p>Add <code>.b</code> to turn the tick chip blue.</p>
+        </div>
+      </li>
+      <li class="adv-item">
+        <span class="adv-ck g"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <div>
+          <h4>Green variant</h4>
+          <p>Add <code>.g</code> for green. The grid collapses to one column on mobile.</p>
+        </div>
+      </li>
+    </ul>
+    <p class="mono" style="font-size:12px;color:var(--grey);margin-top:18px">ul.adv &gt; li.adv-item &gt; span.adv-ck(.b|.g) + div(h4 + p)</p>
+  </div>
+</section>
+
+<!-- ========================================================================
+     PANEL & KEY/VALUE
+     ===================================================================== -->
+<section class="sec" id="panel" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Meta</div>
+        <h2>Panel &amp; key / value rows</h2>
+      </div>
+    </div>
+    <div class="cards-3" style="grid-template-columns:1fr 1fr;gap:24px">
+      <div class="panel">
+        <h3>At a glance</h3>
+        <div class="kv"><span class="k">Approx. cost</span><span class="v">~&euro;115</span></div>
+        <div class="kv"><span class="k">Build time</span><span class="v">a weekend</span></div>
+        <div class="kv"><span class="k">Sphere</span><span class="v">160&nbsp;mm</span></div>
+        <div class="kv"><span class="k">Controller</span><span class="v">M5Stack CoreS3</span></div>
+      </div>
+      <div class="panel">
+        <h3>Files &amp; links</h3>
+        <a class="lk red mono" href="#panel" style="display:block;padding:6px 0">A mono red link &#8599;</a>
+        <a class="lk red mono" href="#panel" style="display:block;padding:6px 0">Another one &#8599;</a>
+        <a class="lk red mono" href="#panel" style="display:block;padding:6px 0">And a third &#8599;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     FLOW (numbered steps)
+     ===================================================================== -->
+<section class="sec" id="flow" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Process</div>
+        <h2>Numbered flow</h2>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="flow-item">
+        <span class="fn">1</span>
+        <div>
+          <h3>First step</h3>
+          <p>A numbered card for sequential instructions. The number sits in a bordered square.</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <span class="fn">2</span>
+        <div>
+          <h3>Second step</h3>
+          <p>Stacks vertically with consistent spacing. Used on the Build page.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     NOTES / CALLOUTS
+     ===================================================================== -->
+<section class="sec" id="notes" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Callouts</div>
+        <h2>Note boxes</h2>
+      </div>
+      <span class="hand">swap the icon glyph to taste</span>
+    </div>
+    <div class="soft-row">
+      <div class="note">
+        <span class="ni">!</span>
+        <div>
+          <h4>Default note</h4>
+          <p>A bordered callout with a red icon chip. Good for tips and asides.</p>
+        </div>
+      </div>
+      <div class="note warn">
+        <span class="ni">&#9888;</span>
+        <div>
+          <h4>Warning note</h4>
+          <p>Add <code>.warn</code> to turn the icon chip yellow for cautions.</p>
+        </div>
+      </div>
+      <div class="note">
+        <span class="ni">&gt;_</span>
+        <div>
+          <h4>Terminal / how-to note</h4>
+          <p>Same box with a <code>&gt;_</code> glyph &mdash; used for command-line instructions.</p>
+        </div>
+      </div>
+      <div class="note">
+        <span class="ni" style="background:var(--blue)">i</span>
+        <div>
+          <h4>Info note</h4>
+          <p>Recolour the chip inline (here blue) for an informational variant.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     TABLE
+     ===================================================================== -->
+<section class="sec" id="table" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Data</div>
+        <h2>Tables</h2>
+      </div>
+      <span class="hand">wrap in <code>.table-card</code> for the border &amp; shadow</span>
+    </div>
+    <div class="table-card">
+      <table class="bb">
+        <thead>
+          <tr><th style="width:42%">Item</th><th>Qty</th><th>~&euro;</th><th>Source</th><th style="width:30%">Remarks</th></tr>
+        </thead>
+        <tbody>
+          <tr class="grp"><td colspan="5">Group heading row</td></tr>
+          <tr><td>An example part</td><td class="qty">1</td><td class="price">1.00</td><td><a class="src" href="#table">3D print</a></td><td>a remark</td></tr>
+          <tr><td>Another part</td><td class="qty">3</td><td class="price">26.55</td><td><a class="src" href="#table">RobotShop &#8599;</a></td><td>even rows tint slightly</td></tr>
+          <tr><td>A third part</td><td class="qty">&mdash;</td><td class="price">&mdash;</td><td>any</td><td>em-dash for n/a</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     CHECKLIST
+     ===================================================================== -->
+<section class="sec" id="checklist" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Lists</div>
+        <h2>Checklist</h2>
+      </div>
+    </div>
+    <div class="panel" style="max-width:480px">
+      <h3 style="margin-bottom:8px">What to bring</h3>
+      <ul class="checklist">
+        <li><span class="box"></span><span>An empty checkbox item</span></li>
+        <li><span class="box"></span><span>Another thing to remember</span></li>
+        <li><span class="box"></span><span>With an <code>inline code</code> bit</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     SCRIPT CARDS
+     ===================================================================== -->
+<section class="sec" id="scripts" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Outreach</div>
+        <h2>Script cards</h2>
+      </div>
+      <span class="hand">header + duration pill, then a body</span>
+    </div>
+    <div class="scripts">
+      <div class="script">
+        <div class="sh"><h3>With a quote</h3><span class="dur">30 seconds</span></div>
+        <div class="sb">
+          <blockquote>"A hand-drawn blockquote with a red left border &mdash; perfect for a spoken line."</blockquote>
+          <p class="sub" style="font-size:16px;margin-top:16px">Follow-up copy underneath the quote.</p>
+        </div>
+      </div>
+      <div class="script">
+        <div class="sh"><h3>With an ordered list</h3><span class="dur">2 minutes</span></div>
+        <div class="sb">
+          <ol>
+            <li>First instruction in the sequence.</li>
+            <li>Second instruction, with a <code>code</code> snippet.</li>
+            <li>Third and final step.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     DARK STRIP
+     ===================================================================== -->
+<section class="sec" id="strip" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Feature band</div>
+        <h2>Dark strip</h2>
+      </div>
+    </div>
+
+    <div class="strip">
+      <div class="sec-head" style="margin-bottom:30px">
+        <h2>A dark feature strip</h2>
+        <span class="mono" style="color:#9a9aa2;font-size:13px">mono caption, muted</span>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="sn">|0&#10217;</div>
+          <h3>Step with a big symbol</h3>
+          <p>Three columns separated by faint dividers. The big <code style="color:#fff;background:rgba(255,255,255,.12)">.sn</code> can be a symbol or number.</p>
+        </div>
+        <div class="step">
+          <div class="sn">H</div>
+          <h3>Second step</h3>
+          <p>Reads left to right; collapses to a stack on mobile.</p>
+        </div>
+        <div class="step">
+          <div class="sn" style="font-size:30px">v1</div>
+          <h3>Third step</h3>
+          <p>Shrink the symbol inline when you need a longer label.</p>
+        </div>
+      </div>
+      <div class="cta-row" style="margin-top:28px">
+        <a class="btn btn-ghost" href="#strip" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.4);box-shadow:none">Ghost button on dark &#8599;</a>
+      </div>
+    </div>
+
+    <div class="strip grid" style="margin-top:24px">
+      <div>
+        <h2>Strip with facts</h2>
+        <p>Add <code style="color:#fff;background:rgba(255,255,255,.12)">.grid</code> to split the strip into copy + a facts panel.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><div class="n">1</div><div class="l">qubit visualised</div></div>
+        <div class="fact"><div class="n">~&euro;115</div><div class="l">in parts</div></div>
+        <div class="fact"><div class="n">4</div><div class="l">puzzle levels</div></div>
+        <div class="fact"><div class="n">3</div><div class="l">omni wheels</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     SOFT ROW
+     ===================================================================== -->
+<section class="sec" id="soft" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Software &amp; games</div>
+        <h2>Soft rows</h2>
+      </div>
+      <span class="hand">dashed border, badge + text</span>
+    </div>
+    <div class="soft-row">
+      <a class="soft" href="#soft">
+        <span class="badge" style="background:var(--red)">QX</span>
+        <div>
+          <h4>A soft link row</h4>
+          <p>Dashed-border card with a coloured badge, a title and a short description.</p>
+          <span class="lk red mono">a mono link &#8599;</span>
+        </div>
+      </a>
+      <a class="soft" href="#soft">
+        <span class="badge" style="background:var(--blue)">&#9685;</span>
+        <div>
+          <h4>Second soft row</h4>
+          <p>Hovering nudges it up-left. Used for the games / software list.</p>
+          <span class="lk mono" style="color:var(--blue)">another link &#8599;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     NAV & FOOTER (the layout chrome)
+     ===================================================================== -->
+<section class="sec" id="chrome" style="padding-top:18px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Layout chrome</div>
+        <h2>Nav &amp; footer</h2>
+      </div>
+      <span class="hand">&uarr; live at the top &middot; live at the bottom &darr;</span>
+    </div>
+    <p class="prose" style="color:var(--ink-soft)">These come from the default layout (<code>_includes/nav.html</code> and <code>_includes/footer.html</code>), so the live examples are the sticky nav at the top of this page and the footer below it.</p>
+
+    <div class="cards-3" style="grid-template-columns:1fr 1fr;gap:24px;margin-top:22px">
+      <div class="panel">
+        <h3 style="margin-bottom:10px">Nav</h3>
+        <ul class="bullets" style="margin:0">
+          <li><code>.site-nav</code> &mdash; sticky, blurred, ink-bordered bar.</li>
+          <li><code>.brand</code> &mdash; logo mark + <code>.bn</code> wordmark.</li>
+          <li><code>.nav-links a</code> &mdash; underline-on-hover; <code>.active</code> marks the current page (set via the layout script + <code>data-nav</code>).</li>
+          <li><code>.nav-links a.pill</code> &mdash; the dark rounded GitHub button.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3 style="margin-bottom:10px">Footer</h3>
+        <ul class="bullets" style="margin:0">
+          <li><code>.site-foot</code> &mdash; ink-bordered footer, three columns.</li>
+          <li><code>.fcol.fbrand</code> &mdash; wordmark + blurb; other <code>.fcol</code>s are link lists under an <code>h5</code> label.</li>
+          <li><code>.partners</code> &mdash; optional inline partner row.</li>
+          <li><code>.foot-bottom</code> &mdash; the thin mono baseline strip.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     ANNOTATIONS / HAND ELEMENTS
+     ===================================================================== -->
+<section class="sec" id="hand" style="padding-top:18px;padding-bottom:60px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Flavour</div>
+        <h2>Hand-drawn touches</h2>
+      </div>
+    </div>
+    <div class="panel">
+      <p style="font-size:18px">The personality of the site comes from a few small touches mixed into normal copy:</p>
+      <p style="font-size:18px;margin-top:14px"><span class="hand" style="font-size:22px">&larr; a hand-written aside</span> &nbsp; using <code>.hand</code>,</p>
+      <p style="font-size:18px;margin-top:14px">a <span class="mark red">highlighter mark</span> on a phrase using <code>.mark.red</code>,</p>
+      <p style="font-size:18px;margin-top:14px">and the dotted paper background that sits behind the whole page.</p>
+    </div>
+  </div>
+</section>
