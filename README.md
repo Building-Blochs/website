@@ -1,7 +1,7 @@
 # Building Blochs — website
 
 The public website for the **Building Blochs** project: an open-source, motorised
-Bloch-sphere demonstrator for teaching and outreach in quantum computing.
+Bloch-sphere demonstrator for teaching and outreach in quantum computing. Find the website live at https://building-blochs.github.io/website/.
 
 It's a small [Jekyll](https://jekyllrb.com/) site — static HTML + one stylesheet
 for the main pages, plus a handful of Markdown manuals — that builds on GitHub
