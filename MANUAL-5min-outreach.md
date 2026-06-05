@@ -9,7 +9,7 @@ description: >-
   science festival, open day or booth. No prior knowledge needed, ages 12+.
 lede: >-
   A ready-to-run script for engaging passers-by at a festival, open day or
-  booth. No prior knowledge needed — for anyone 12+.
+  booth. No prior knowledge needed, for anyone 12+.
 meta:
   - k: Time
     v: "5–15 min"
@@ -29,6 +29,15 @@ related:
   - label: "QX Orb game manual →"
     url: "manual-qx-orb.html"
 ---
+
+## Suggested setup
+
+Ideally, prepare a table with nearby power socket to put the Bloch Sphere on, such that it is clearly visible (also from furthe away -- it's a great eyecatcher that will lure audience to you). Additionally, have a large screen (which as many people as possible can see well -- it should be above should height). Connect a laptop running QX Orb to the screen and to the Bloch Sphere.  
+
+For help installing QX Orb, see the [QX Orb manual](manual-qx-orb.html). Optionally, you may like to put down additional spheres with the same or other standalone games, like the [Fish Game](play.html). 
+
+Have at least one guide who will run through the script below. A good guide is someone who explain all steps vividly and passionately, and can adjust the content to the background of the audience. 
+
 
 ## The script
 
